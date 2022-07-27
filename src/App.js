@@ -7,6 +7,7 @@ import direction from './icons/direction.png'
 import eye from './icons/eye.png'
 import humidity from './icons/humidity.png'
 import cloud from './icons/cloud.png'
+import sun from './icons/sun.png'
 
 function App() {
   const [inputLocal, setInputLocal] = useState("Porto, Portugal")
@@ -86,63 +87,76 @@ function App() {
   }
 
   return (
-    <div>
-      <section className='current-day'>
+    <div className='weather-body'>
+      <h3 
+        className='weather-title'>Check out the weather in your town!
+      </h3>
+      <section>
         <input
           type="text"
           onChange={handleEvent}
           value={inputLocal}
-        />
-        <button onClick={handleFetch}><i className='fa-solid fa-plane'></i></button>
-        <div className='place-info'>
-          <h2>{localInfo.name}</h2>
-          <h2>{localInfo.country}</h2> 
-        </div>
-        <img src={localInfo.conditionIcon} alt= "" className="icon"/>
-        <h2 className='current-temperature'>{Math.round(localInfo?.currentTemp)} <span className='celsius'>°C</span></h2>
-        <br/><br/>
-        <h2>{localInfo.condition}</h2>
-        <br/><br/>
-        <h2>{newDayWeek()}</h2>
-        <h2>{localInfo.currentDate}</h2>
+          className="city-input"
+          />
+          <button 
+            onClick={handleFetch} 
+            className="input-btn">
+              <i className='fa-solid fa-plane'></i>
+            </button>
       </section>
-      <section className='future-info'>
-          <h2 className='tomorrow-day'>Tomorrow</h2>
-          <img src={localInfo.futureIcon} className="icon-2" alt=""/>
-          <h2 className='future-condition'>{localInfo.futureCondition}</h2>
+      <section className='current-n-tommorrow-day'>
+        <div className='current-day'>
+          <h2 className='current-day-title'>Today</h2>
+          <h3>{localInfo.name}</h3>
+          <h3>{localInfo.country}</h3> 
+        <img src={localInfo.conditionIcon} alt= ""/>
+        <h2 
+          className='current-temperature'
+        >
+          {Math.round(localInfo?.currentTemp)} <span>°C</span>
+        </h2>
+          <h3>{localInfo.condition}</h3>
+          <h3>{newDayWeek()}</h3>
+          <h3>{localInfo.currentDate}</h3>
+        </div>
+        <div className='tomorrow-day'>
+        <h2 className='tomorrow-day-title'>Tomorrow</h2>
+          <img src={localInfo.futureIcon} alt=""/>
+          <h2>{localInfo.futureCondition}</h2>
           <br/>
-          <h2 className='future-temp'>{localInfo?.futureMaxTemp} / {localInfo?.futureMinTemp}</h2>
-          <h2></h2>
-          <h2 className='future-humidity'><i className="fa-solid fa-droplet"></i> {localInfo?.averageHumidity}</h2>
-          <h2 className='future-rain-chance'><i className="fa-solid fa-cloud-rain"></i> {localInfo?.futureChanceRain}</h2>
+          <h3>Max: {localInfo?.futureMaxTemp}</h3>
+          <h3>Min: {localInfo?.futureMinTemp}</h3>
+          <h3><i className="fa-solid fa-droplet"></i> {localInfo?.averageHumidity}</h3>
+          <h3><i className="fa-solid fa-cloud-rain"></i> {localInfo?.futureChanceRain}</h3>
+        </div>
       </section>
-          <h1 className='more-info-title'>More information from today:</h1>
-      <section className="more-info">
-        <div className='grid-info'>
-          <h2 className='grid-title'>UV Index</h2>
-          <h3 className='grid-value'><i className='fa-solid fa-sun'></i> {localInfo.uvRays}</h3>
+      <h2 className='more-info-title'>More today's info</h2>
+      <section className='more-info'>
+        <div>
+          <h2>UV Index</h2>
+          <h2 className='info-value'><img src={sun} className="outside-icons"/> {localInfo.uvRays}</h2>
         </div>
-        <div className='grid-info'>
-          <h2 className='grid-title'>Sunrise / Sunset</h2>
-          <h3 className='grid-value'><img src={sunrise} className="outside-icons"/> {localInfo.sunrise}</h3>
-          <h3 className='grid-value'><img src={sunset} className="outside-icons"/> {localInfo.sunset}</h3>
+        <div>
+          <h2>Sunrise / Sunset</h2>
+          <h3 className='info-value'><img src={sunrise} className="outside-icons"/> {localInfo.sunrise}</h3>
+          <h3 className='info-value'><img src={sunset} className="outside-icons"/> {localInfo.sunset}</h3>
         </div>
-        <div className='grid-info'>
-          <h2 className='grid-title'>Wind Speed / Dir.</h2>
-          <h3 className='grid-value'><img src={wind} className="outside-icons"/> {localInfo.windSpeed} kph</h3>
-          <h3 className='grid-value'><img src={direction} className="outside-icons"/> {localInfo.windDirection}</h3>
+        <div>
+          <h2>Wind Speed / Dir.</h2>
+          <h3 className='info-value'><img src={wind} className="outside-icons"/> {localInfo.windSpeed} kph</h3>
+          <h3 className='info-value'><img src={direction} className="outside-icons"/> {localInfo.windDirection}</h3>
         </div>
-        <div className='grid-info'>
-          <h2 className='grid-title'>Visibility</h2>
-          <h3 className='grid-value'><img src={eye} className="outside-icons"/> {localInfo.visibility} km</h3>
+        <div>
+          <h2>Visibility</h2>
+          <h3 className='info-value'><img src={eye} className="outside-icons"/> {localInfo.visibility} km</h3>
         </div>
-        <div className='grid-info'>
-          <h2 className='grid-title'>Humidity</h2>
-          <h3 className='grid-value'><img src={humidity} className="outside-icons"/> {localInfo.humidity} %</h3>
+        <div>
+          <h2>Humidity</h2>
+          <h3 className='info-value'><img src={humidity} className="outside-icons"/> {localInfo.humidity} %</h3>
         </div>
-        <div className='grid-info'>
-          <h2 className='grid-title'>Cloud Coverage</h2>
-          <h3 className='grid-value'><img src={cloud} className="outside-icons"/> {localInfo.cloud} %</h3>
+        <div>
+          <h2>Cloud Coverage</h2>
+          <h3 className='info-value'><img src={cloud} className="outside-icons"/> {localInfo.cloud} %</h3>
         </div>
       </section>
     </div>

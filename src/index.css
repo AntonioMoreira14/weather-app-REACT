@@ -1,146 +1,136 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+* {
   margin: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: rgb(26, 31, 61);
-  color: rgb(223, 222, 222);
+.weather-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  background: rgb(26,20,128);
+  background: linear-gradient(90deg, rgba(26,20,128,0.8407738095238095) 0%, rgba(0,212,255,1) 100%);
 }
 
-.current-day {
-  float: left;
-  background-color: rgb(37, 46, 94);
-  height: 670px;
-  margin: 20px;
-  width: 300px;
-  padding: 25px;
-  border-radius: 15px;
+.weather-title {
+  font-size: 32px;
   text-align: center;
-  border-style: none;
+  color: rgb(34, 36, 36);
+  margin: 30px;
+  text-shadow: 1px 1px 2px #dadcdd;
 }
 
-input {
-  border-radius: 5px;
+.city-input {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgb(182, 175, 175);
+  border-radius: 15px;
+}
+
+.input-btn {
+  cursor: pointer;
+  background-color: #1b4863;
   border: none;
-  padding: 10px;
-  width: 68%;
-}
-
-button {
-  width: 42px;
-  padding: 10px;
+  color: white;
   border-radius: 10px;
-  background-color: bisque;
-  margin-left: 5px;
-  justify-content: center;
-}
-
-button:hover {
-  border-color: rgb(180, 180, 180);
-}
-
-.place-info {
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-.icon {
-  margin-top: 15px;
-  width: 160px;
-}
-
-.current-temperature {
-  font-size: 55px;
-}
-
-.celsius {
-  font-size: 25px;
-}
-
-.future-info {
-  display: inline-block;
-  position: absolute;
-  height: 200px;
-  padding: 15px;
-  border-radius: 15px;
-  border-style: none;
-  background-color: rgb(37, 46, 94);
-  margin: 20px;
-  margin-left: 0;
-  width: 990px;
-  text-align: center;
-}
-
-.tomorrow-day {
-  text-align: center;
-  font-size: 30px;
-}
-
-.icon-2 {
-  width: 130px;
-}
-
-.future-temp {
-  font-size: 30px;
-}
-
-.future-condition, .future-temp {
-  text-align: left;
-  margin-top: -80px;
-  margin-left: 20px;
-}
-
-.future-humidity, .future-rain-chance {
-  text-align: right;
-  margin-top: -30px;
-  margin-right: 20px;
-}
-
-.future-humidity {
-  margin-bottom: 40px;
-}
-
-.more-info {
-  display: grid;
-  position: absolute;
-  grid-template-columns: auto auto auto;
   padding: 10px;
-  margin-top: 270px;
-  margin-left: 310px;
+  margin-left: 3px;
+}
+
+.current-n-tommorrow-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 25px;
+  gap: 15px;
+  color: #cfd5d8;
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+.current-day, .tomorrow-day {
+  background-color: #1b47639a;
+  padding: 10px;
+  padding-left: 45%;
+  padding-right: 45%;
+  border-radius: 25px;
+  font-size: 14px;
+  line-height: 38px;
+  height: 70vh;
+}
+
+@media screen and (max-height: 540px) {
+  .current-day, .tomorrow-day {
+    height: calc(100vh + 50px);
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .current-day, .tomorrow-day {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .current-day, .tomorrow-day {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+  .current-n-tommorrow-day {
+    margin-left: 4px;
+    margin-right: 4px;
+    gap: 8px;
+  }
+  .more-info {
+    padding: 20px;
+  }
+}
+
+.current-day-title, .tomorrow-day-title {
+  margin-bottom: 10px;
+  color: #b2bcc2;
+  font-size: 20px;
 }
 
 .more-info-title {
-  position: absolute;
-  margin-top: 240px;
-  margin-left: 340px;
-}
-
-.grid-info {
-  background-color: rgb(37, 46, 94);
-  border-radius: 15px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  border-style: none;
-  padding: 20px;
-  font-size: 30px;
-  text-align: left;
-  width: 314px;
-  height: 195px;
-}
-
-.grid-title {
-  margin-top: 15px;
-  font-size: 30px;
+  font-size: 26px;
   text-align: center;
-}
-
-.grid-value {
-  font-size: 25px;
-  text-align: center;
-  margin-top: 20px;
+  margin: 30px;
+  text-shadow: 1px 1px 2px #dadcdd;
 }
 
 .outside-icons {
-  width: 25px;
+  width: 30px;
+  height: 30px;
+}
+
+.more-info {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  text-align: center;
+  margin-top: 25px;
+  color: #cfd5d8;
+  border-radius: 25px;
+  font-size: 16px;
+  background-color: #1b47639a;
+  margin-bottom: 30px;
+  line-height: 60px;
+}
+
+.info-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
