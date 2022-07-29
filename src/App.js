@@ -108,20 +108,22 @@ function App() {
         <div className='current-day'>
           <h2 className='current-day-title'>Today</h2>
           <h3>{localInfo.name}</h3>
-          <h3>{localInfo.country}</h3> 
-        <img src={localInfo.conditionIcon} alt= ""/>
+          <h3>{localInfo.country}</h3>
+          <br />
+        <img className='condition-icon' src={localInfo.conditionIcon} alt= ""/>
         <h2 
           className='current-temperature'
         >
           {Math.round(localInfo?.currentTemp)} <span>°C</span>
         </h2>
           <h3>{localInfo.condition}</h3>
+          <br />
           <h3>{newDayWeek()}</h3>
           <h3>{localInfo.currentDate}</h3>
         </div>
         <div className='tomorrow-day'>
         <h2 className='tomorrow-day-title'>Tomorrow</h2>
-          <img src={localInfo.futureIcon} alt=""/>
+          <img className='condition-icon' src={localInfo.futureIcon} alt=""/>
           <h2>{localInfo.futureCondition}</h2>
           <br/>
           <h3>Max: {localInfo?.futureMaxTemp}</h3>

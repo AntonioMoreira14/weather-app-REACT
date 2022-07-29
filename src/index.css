@@ -55,43 +55,43 @@
 }
 
 .current-day, .tomorrow-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #1b47639a;
   padding: 10px;
-  padding-left: 45%;
-  padding-right: 45%;
+  padding-left: 40%;
+  padding-right: 40%;
   border-radius: 25px;
   font-size: 14px;
-  line-height: 38px;
-  height: 82vh;
+  line-height: 25px;
+  height: 80vh;
 }
 
 @media screen and (max-height: 540px) {
   .current-day, .tomorrow-day {
     height: calc(100vh + 50px);
-    line-height: 34px;
   }
 }
 
-@media screen and (min-height: 720px) {
+@media screen and (min-height: 844px) {
   .current-day, .tomorrow-day {
-    height: 58vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    line-height: 34px;
+    height: 67vh;
+    line-height: 33px;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .current-day, .tomorrow-day {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 9%;
+    padding-right: 9%;
+    font-size: 11px;
   }
   .current-n-tommorrow-day {
-    margin-left: 4px;
-    margin-right: 4px;
-    gap: 8px;
+    margin-left: 2px;
+    margin-right: 2px;
+    gap: 3px;
   }
   .more-info {
     padding: 20px;
@@ -99,9 +99,9 @@
 }
 
 .current-day-title, .tomorrow-day-title {
-  margin-bottom: 10px;
-  color: #b2bcc2;
-  font-size: 20px;
+  margin-bottom: 30px;
+  color: hsl(202, 12%, 73%);
+  font-size: 19px;
 }
 
 .more-info-title {
