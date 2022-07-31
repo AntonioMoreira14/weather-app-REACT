@@ -1,3 +1,9 @@
+LIVE VERSION: https://weather-app-react-pjt.netlify.app/
+
+Planning to add:
+- API with more days;
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
