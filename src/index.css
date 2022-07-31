@@ -19,7 +19,7 @@
   text-align: center;
   color: rgb(44, 44, 44);
   margin: 30px;
-  text-shadow: 1px 1px 2px #dadcdd;
+  text-shadow: 1px 1px 2px #d0d2d3;
 }
 
 .city-input {
@@ -39,70 +39,44 @@
   margin-left: 3px;
 }
 
-.current-n-tommorrow-day {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 25px;
-  gap: 15px;
-  color: #cfd5d8;
-  font-size: 18px;
+.current-day-title, .tomorrow-day-title {
   margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 7px;
-  margin-right: 7px;
+  font-size: 26px;
+  text-align: center;
+  color: rgb(44, 44, 44);
+  text-shadow: 1px 1px 2px #d0d2d3;
 }
 
 .current-day, .tomorrow-day {
+  background-color: #1b47639a;
+  margin: 30px;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  width: 520px;
+  color: rgb(204, 200, 200);
   display: flex;
-  position: static;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #1b47639a;
-  padding: 10px;
-  padding-left: 40%;
-  padding-right: 40%;
-  border-radius: 25px;
-  font-size: 14px;
-  line-height: 25px;
-  height: 80vh;
 }
 
-@media screen and (max-height: 540px) {
-  .current-day, .tomorrow-day {
-    height: calc(100vh + 50px);
-  }
+.local-today {
+  font-size: 22px;
 }
 
-@media screen and (min-height: 844px) {
-  .current-day, .tomorrow-day {
-    height: 67vh;
-    line-height: 33px;
-  }
+.current-day > img {
+  width: 100px;
+  height: 100px;
 }
 
-@media screen and (max-width: 1023px) {
-  .current-day, .tomorrow-day {
-    padding-left: 9%;
-    padding-right: 9%;
-    font-size: 11px;
-  }
-  .current-n-tommorrow-day {
-    margin-left: 2px;
-    margin-right: 2px;
-    gap: 3px;
-  }
-  .more-info {
-    padding: 20px;
-  }
+.current-temperature, .tomorrow-temp {
+  font-size: 24px;
 }
 
-.current-day-title, .tomorrow-day-title {
-  margin-bottom: 30px;
-  color: hsl(202, 12%, 73%);
-  font-size: 19px;
+.tomorrow-day > img {
+  width: 100px;
+  height: 100px;
 }
 
 .more-info-title {
@@ -110,7 +84,7 @@
   text-align: center;
   color: rgb(44, 44, 44);
   margin: 30px;
-  text-shadow: 1px 1px 2px #dadcdd;
+  text-shadow: 1px 1px 2px #d0d2d3;
 }
 
 .outside-icons {
@@ -137,4 +111,16 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+
+@media screen and (max-width: 512px) {
+  .current-day, .tomorrow-day {
+    width: 280px;
+  }
+  .local-today {
+    font-size: 20px;
+  }
+  .more-info {
+    padding: 30px;
+  }
 }

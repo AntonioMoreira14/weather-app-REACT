@@ -89,7 +89,7 @@ function App() {
   return (
     <div className='weather-body'>
       <h3 
-        className='weather-title'>Check out the weather in your town!
+        className='weather-title'>Check the weather in your city!
       </h3>
       <section>
         <input
@@ -104,13 +104,13 @@ function App() {
               <i className='fa-solid fa-plane'></i>
             </button>
       </section>
-      <section className='current-n-tommorrow-day'>
+        <h2 className='current-day-title'>Today</h2>
         <div className='current-day'>
-          <h2 className='current-day-title'>Today</h2>
-          <h3>{localInfo.name}</h3>
-          <h3>{localInfo.country}</h3>
+          <h3 className='local-today'>{localInfo.name}</h3>
           <br />
-        <img className='condition-icon' src={localInfo.conditionIcon} alt= ""/>
+          <h3 className='local-today'>{localInfo.country}</h3>
+          <br />
+        <img src={localInfo.conditionIcon} alt= ""/>
         <h2 
           className='current-temperature'
         >
@@ -121,17 +121,17 @@ function App() {
           <h3>{newDayWeek()}</h3>
           <h3>{localInfo.currentDate}</h3>
         </div>
-        <div className='tomorrow-day'>
         <h2 className='tomorrow-day-title'>Tomorrow</h2>
-          <img className='condition-icon' src={localInfo.futureIcon} alt=""/>
+        <div className='tomorrow-day'>
           <h2>{localInfo.futureCondition}</h2>
+          <img src={localInfo.futureIcon} alt=""/>
           <br/>
-          <h3>Max: {localInfo?.futureMaxTemp}</h3>
-          <h3>Min: {localInfo?.futureMinTemp}</h3>
+          <h3 className='tomorrow-temp'>Max: {localInfo?.futureMaxTemp}</h3>
+          <h3 className='tomorrow-temp'>Min: {localInfo?.futureMinTemp}</h3>
+          <br />
           <h3><i className="fa-solid fa-droplet"></i> {localInfo?.averageHumidity}</h3>
           <h3><i className="fa-solid fa-cloud-rain"></i> {localInfo?.futureChanceRain}</h3>
         </div>
-      </section>
       <h2 className='more-info-title'>More today's info</h2>
       <section className='more-info'>
         <div>
